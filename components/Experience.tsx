@@ -6,6 +6,7 @@ const experiences = [
   {
     role: "Youth Wrestling Coach",
     org: "OC Regional Training Center",
+    location: "Huntington Beach, CA",
     dates: "May 2022 – Present",
     bullets: [
       "Develop individualized training programs for youth wrestlers across all skill levels",
@@ -15,7 +16,8 @@ const experiences = [
   },
   {
     role: "Olympic Training Center Elite Accelerator Program",
-    org: "Colorado Springs, CO",
+    org: "USA Olympic Training Center",
+    location: "Colorado Springs, CO",
     dates: "Jan – Aug 2025",
     bullets: [
       "Trained at the national Olympic Training Center alongside elite-level athletes",
@@ -25,6 +27,7 @@ const experiences = [
   {
     role: "Youth Wrestling Coach",
     org: "Premier Wrestling Facility",
+    location: "Placentia, CA",
     dates: "2021 – March 2022",
     bullets: [
       "Coached youth wrestlers in fundamentals, takedowns, and live drilling",
@@ -34,6 +37,7 @@ const experiences = [
   {
     role: "Three-Season Varsity Captain",
     org: "Marina High School",
+    location: "Huntington Beach, CA",
     dates: "2019 – 2023",
     bullets: [
       "Led team culture, accountability, and match-day preparation as captain",
@@ -44,6 +48,7 @@ const experiences = [
   {
     role: "Youth Martial Arts Instructor",
     org: "Gracie Barra HQ",
+    location: "Irvine, CA",
     dates: "2015 – 2018",
     bullets: [
       "Instructed children ages 5–12 in Brazilian jiu-jitsu fundamentals",
@@ -53,6 +58,7 @@ const experiences = [
   {
     role: "Youth Tournament Referee",
     org: "Youth Wrestling Circuit",
+    location: "CA & CO",
     dates: "2021 – 2023",
     bullets: [
       "Officiated youth wrestling tournaments, ensuring fair play and rule compliance",
@@ -115,9 +121,10 @@ export default function Experience() {
                     </h3>
                     <span className="text-gold-600 font-sans text-sm">&mdash; {exp.org}</span>
                   </div>
-                  <span className="text-xs tracking-widest uppercase text-navy-600/60 font-sans">
-                    {exp.dates}
-                  </span>
+                  <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-0.5">
+                    <span className="text-xs tracking-widest uppercase text-navy-600/60 font-sans">{exp.dates}</span>
+                    <span className="text-xs text-navy-600/50 font-sans">{exp.location}</span>
+                  </div>
                 </div>
 
                 <ul className="space-y-1.5">
