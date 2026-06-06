@@ -29,7 +29,7 @@ export default function About() {
             <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-gold-600 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
               About
             </motion.p>
-            <motion.h2 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-4xl sm:text-5xl font-bold text-navy-900 leading-tight mb-6">
+            <motion.h2 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-3xl sm:text-5xl font-bold text-navy-900 leading-tight mb-6">
               Athlete.
               <br />
               Scholar.
@@ -46,7 +46,7 @@ export default function About() {
             whileInView={prefersReduced ? undefined : "show"}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-navy-800 text-lg leading-relaxed font-sans mb-6">
+            <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-navy-800 text-base sm:text-lg leading-relaxed font-sans mb-6">
               A two-time World Team wrestler and 4.0 student at North Central College, Carissa Qureshi brings the same relentless discipline to her academic and professional pursuits that has made her an elite international competitor. Competing at the highest levels of UWW competition — including the 2025 World Championships — while maintaining a perfect GPA, she has proven that excellence in one arena translates directly to another.
             </motion.p>
             <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-navy-700 leading-relaxed font-sans mb-10">

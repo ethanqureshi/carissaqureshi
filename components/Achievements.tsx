@@ -91,7 +91,7 @@ export default function Achievements() {
           <p className="text-gold-400 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
             Competition Record
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white mb-4">
             Achievements
           </h2>
           <div className="gold-rule w-24 mx-auto" />

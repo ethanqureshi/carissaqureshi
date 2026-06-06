@@ -31,8 +31,8 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
-        <a href="#" className="font-serif text-lg font-semibold tracking-wide text-cream">
-          Carissa <span className="text-gradient-gold">Qureshi</span>
+        <a href="#" className="font-serif text-xl font-bold tracking-widest text-cream">
+          C<span className="text-gradient-gold">Q</span>
         </a>
 
         {/* Desktop links */}

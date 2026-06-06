@@ -5,8 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const stats = [
   { value: "4.0", label: "GPA" },
-  { value: "2×", label: "World Team" },
-  { value: "10+", label: "Years Coaching" },
+  { value: "2×", label: "Junior World Team" },
 ];
 
 const containerVariants = {
@@ -38,7 +37,7 @@ export default function Hero() {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-navy-600/40 blur-[100px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left — text */}
           <motion.div
             variants={prefersReduced ? undefined : containerVariants}
@@ -50,25 +49,25 @@ export default function Hero() {
               North Central College · Political Science & Criminology
             </motion.p>
 
-            <motion.h1 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-white mb-2">
+            <motion.h1 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-white mb-2">
               Carissa
             </motion.h1>
-            <motion.h1 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-gradient-gold mb-6">
+            <motion.h1 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-gradient-gold mb-6">
               Qureshi
             </motion.h1>
 
             <div className="gold-rule w-24 mb-6" />
 
-            <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-white/70 text-lg leading-relaxed max-w-lg font-sans mb-8">
+            <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-white/70 text-base sm:text-lg leading-relaxed max-w-lg font-sans mb-8">
               World Team wrestler, 4.0 student, and driven leader seeking to bring elite-level discipline to public service.
             </motion.p>
 
             {/* Stats */}
-            <motion.div variants={prefersReduced ? undefined : fadeUp} className="flex gap-8 mb-10">
+            <motion.div variants={prefersReduced ? undefined : fadeUp} className="flex gap-10 mb-10">
               {stats.map((s) => (
                 <div key={s.label}>
                   <div className="font-serif text-3xl font-bold text-gold-400">{s.value}</div>
-                  <div className="text-xs tracking-widest uppercase text-white/50 mt-1 font-sans">{s.label}</div>
+                  <div className="text-xs tracking-widest uppercase text-white/50 mt-1 font-sans max-w-[120px] leading-snug">{s.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -102,12 +101,12 @@ export default function Hero() {
               <div className="absolute -inset-3 border border-gold-500/30" />
               <div className="absolute -inset-1.5 border border-gold-500/15" />
               {/* Corner accents */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-gold-500" />
-              <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-gold-500" />
-              <div className="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-gold-500" />
-              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-gold-500" />
+              <div className="absolute -top-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-l-2 border-gold-500" />
+              <div className="absolute -top-3 -right-3 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 border-gold-500" />
+              <div className="absolute -bottom-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-l-2 border-gold-500" />
+              <div className="absolute -bottom-3 -right-3 w-6 h-6 sm:w-8 sm:h-8 border-b-2 border-r-2 border-gold-500" />
 
-              <div className="w-72 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[480px] relative overflow-hidden">
+              <div className="w-56 h-64 sm:w-72 sm:h-80 lg:w-96 lg:h-[480px] relative overflow-hidden">
                 <Image
                   src="/hero-headshot.png"
                   alt="Carissa Qureshi"
@@ -115,7 +114,6 @@ export default function Hero() {
                   className="object-cover object-top"
                   priority
                 />
-                {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/40 via-transparent to-transparent" />
               </div>
             </div>

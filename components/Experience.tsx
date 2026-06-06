@@ -83,7 +83,7 @@ export default function Experience() {
           <p className="text-gold-600 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
             Background
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-navy-900 mb-4">
             Experience
           </h2>
           <div className="gold-rule w-16" />
@@ -107,12 +107,14 @@ export default function Experience() {
                 {/* Timeline dot */}
                 <div className="absolute left-0 top-1 w-2 h-2 rounded-full bg-gold-500 -translate-x-[3.5px]" />
 
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-                  <h3 className="font-serif text-xl font-semibold text-navy-900">
-                    {exp.role}
-                  </h3>
-                  <span className="text-gold-600 font-sans text-sm">&mdash; {exp.org}</span>
-                  <span className="ml-auto text-xs tracking-widest uppercase text-navy-600/60 font-sans">
+                <div className="mb-3">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-navy-900">
+                      {exp.role}
+                    </h3>
+                    <span className="text-gold-600 font-sans text-sm">&mdash; {exp.org}</span>
+                  </div>
+                  <span className="text-xs tracking-widest uppercase text-navy-600/60 font-sans">
                     {exp.dates}
                   </span>
                 </div>

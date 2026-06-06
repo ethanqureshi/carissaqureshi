@@ -20,7 +20,7 @@ export default function Contact() {
           <p className="text-gold-400 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
             Let’s Connect
           </p>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Ready to bring
             <br />
             <span className="text-gradient-gold">elite discipline</span>
