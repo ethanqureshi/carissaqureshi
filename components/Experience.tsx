@@ -14,9 +14,9 @@ const experiences = [
     ],
   },
   {
-    role: "Olympic Training Center Accelerator",
+    role: "Olympic Training Center Elite Accelerator Program",
     org: "Colorado Springs, CO",
-    dates: "2023",
+    dates: "Jan – Aug 2025",
     bullets: [
       "Trained at the national Olympic Training Center alongside elite-level athletes",
       "Developed advanced technique under USA Wrestling coaching staff",

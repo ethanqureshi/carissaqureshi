@@ -16,7 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Carissa Qureshi",
-  description: "World Team wrestler, 4.0 student, and driven leader seeking to bring elite-level discipline to public service.",
+  description: "World Team wrestler, 3.9 GPA student, and driven leader seeking to bring elite-level discipline to public service.",
   openGraph: {
     title: "Carissa Qureshi",
     description: "World Team wrestler, 4.0 student, and driven leader.",

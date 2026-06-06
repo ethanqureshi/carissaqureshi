@@ -67,7 +67,7 @@ export default function About() {
               </p>
               <div className="flex flex-wrap gap-4 mt-3">
                 <span className="text-xs bg-gold-500/10 text-gold-700 border border-gold-500/30 px-3 py-1 font-sans tracking-wide">
-                  GPA 4.0
+                  GPA 3.9
                 </span>
                 <span className="text-xs bg-navy-800/10 text-navy-700 border border-navy-700/20 px-3 py-1 font-sans tracking-wide">
                   Expected May 2027
