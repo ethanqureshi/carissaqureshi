@@ -7,7 +7,7 @@ const experiences = [
     role: "Youth Wrestling Coach",
     org: "OC Regional Training Center",
     location: "Huntington Beach, CA",
-    dates: "May 2022 – Present",
+    dates: "May 2022 - Present",
     bullets: [
       "Develop individualized training programs for youth wrestlers across all skill levels",
       "Lead technique sessions, conditioning, and competitive preparation",
@@ -18,7 +18,7 @@ const experiences = [
     role: "Olympic Training Center Elite Accelerator Program",
     org: "USA Olympic Training Center",
     location: "Colorado Springs, CO",
-    dates: "Jan – Aug 2025",
+    dates: "Jan - Aug 2025",
     bullets: [
       "Trained at the national Olympic Training Center alongside elite-level athletes",
       "Developed advanced technique under USA Wrestling coaching staff",
@@ -28,7 +28,7 @@ const experiences = [
     role: "Youth Wrestling Coach",
     org: "Premier Wrestling Facility",
     location: "Placentia, CA",
-    dates: "2021 – March 2022",
+    dates: "2021 - March 2022",
     bullets: [
       "Coached youth wrestlers in fundamentals, takedowns, and live drilling",
       "Collaborated with head coaching staff to design weekly practice plans",
@@ -51,7 +51,7 @@ const experiences = [
     location: "Irvine, CA",
     dates: "2015 – 2018",
     bullets: [
-      "Instructed children ages 5–12 in Brazilian jiu-jitsu fundamentals",
+      "Instructed children ages 5-12 in Brazilian jiu-jitsu fundamentals",
       "Developed patience, communication, and instruction skills at a young age",
     ],
   },
@@ -119,7 +119,7 @@ export default function Experience() {
                     <h3 className="font-serif text-lg sm:text-xl font-semibold text-navy-900">
                       {exp.role}
                     </h3>
-                    <span className="text-gold-600 font-sans text-sm">&mdash; {exp.org}</span>
+                    <span className="text-gold-600 font-sans text-sm">, {exp.org}</span>
                   </div>
                   <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-0.5">
                     <span className="text-xs tracking-widest uppercase text-navy-600/60 font-sans">{exp.dates}</span>

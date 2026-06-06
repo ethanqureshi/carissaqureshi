@@ -48,7 +48,7 @@ export default function Hero() {
             className="order-2 lg:order-1"
           >
             <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-gold-400 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
-              North Central College · Political Science & Criminology
+              North Central College, Political Science &amp; Criminology
             </motion.p>
 
             <motion.h1 variants={prefersReduced ? undefined : fadeUp} className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-white mb-2">
