@@ -76,7 +76,7 @@ export default function Achievements() {
       {/* Background texture */}
       <div className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(201,168,76,1) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(196,18,48,1) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />

@@ -1,23 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #030B16;
-  --color-navy-900: #0A1628;
-  --color-navy-800: #0F2040;
-  --color-navy-700: #1A2D52;
-  --color-navy-600: #1E3464;
-  --color-navy-400: #2E4E82;
-  --color-navy-950: #030B16;
-  --color-gold-200: #F5E6B0;
-  --color-gold-300: #EDD980;
-  --color-gold-400: #D4AF55;
-  --color-gold-500: #C9A84C;
-  --color-gold-600: #A8893A;
-  --color-gold-700: #8A6F2C;
-  --color-cream: #FAF7F2;
+  /* Dark backgrounds — deep burgundy-black */
+  --color-navy-950: #08030A;
+  --color-navy-900: #100407;
+  --color-navy-800: #1C060B;
+  --color-navy-700: #280910;
+  --color-navy-600: #341016;
+  --color-navy-400: #5A1B26;
+
+  /* Cardinal Red — NCC primary */
+  --color-gold-200: #F5899B;
+  --color-gold-300: #E8162E;
+  --color-gold-400: #D4142F;
+  --color-gold-500: #C41230;
+  --color-gold-600: #9E0D26;
+  --color-gold-700: #7A0B1D;
+
+  --color-cream: #FAFAFA;
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
-  --background-image-navy-gradient: linear-gradient(135deg, #030B16 0%, #0A1628 50%, #0F2040 100%);
 }
 
 html {
@@ -25,41 +27,41 @@ html {
 }
 
 body {
-  background-color: #030B16;
-  color: #FAF7F2;
+  background-color: #08030A;
+  color: #FAFAFA;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: #C9A84C;
-  color: #030B16;
+  background-color: #C41230;
+  color: #FAFAFA;
 }
 
 .gold-rule {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #C9A84C 30%, #EDD980 50%, #C9A84C 70%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #C41230 30%, #E8162E 50%, #C41230 70%, transparent 100%);
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #C9A84C 0%, #EDD980 50%, #C9A84C 100%);
+  background: linear-gradient(135deg, #C41230 0%, #E8162E 50%, #C41230 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card-glass {
-  background: rgba(15, 32, 64, 0.6);
+  background: rgba(28, 6, 11, 0.6);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(196, 18, 48, 0.15);
 }
 
 .nav-scrolled {
-  background: rgba(3, 11, 22, 0.85);
+  background: rgba(8, 3, 10, 0.88);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+  border-bottom: 1px solid rgba(196, 18, 48, 0.12);
 }
 
 .bg-navy-gradient {
-  background: linear-gradient(135deg, #030B16 0%, #0A1628 50%, #0F2040 100%);
+  background: linear-gradient(135deg, #08030A 0%, #100407 50%, #1C060B 100%);
 }

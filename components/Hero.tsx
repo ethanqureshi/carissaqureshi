@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const stats = [
   { value: "4.0", label: "GPA" },
-  { value: "2×", label: "Junior World Team" },
+  { value: "2×", label: "Junior World Team Member" },
 ];
 
 const containerVariants = {
@@ -30,7 +30,7 @@ export default function Hero() {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px)",
+            "linear-gradient(rgba(196,18,48,1) 1px, transparent 1px), linear-gradient(90deg, rgba(196,18,48,1) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
