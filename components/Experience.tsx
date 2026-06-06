@@ -72,8 +72,8 @@ export default function Experience() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="experience" className="bg-cream py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="experience" className="bg-cream py-16 sm:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}
@@ -93,7 +93,6 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-gold-500/60 via-gold-500/20 to-transparent" />
 
           <div className="space-y-12">

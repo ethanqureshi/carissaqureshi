@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full bg-gold-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-navy-600/40 blur-[100px] pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24 pb-16">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 w-full pt-20 sm:pt-24 pb-12 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {/* Left — text */}
           <motion.div
@@ -65,13 +65,20 @@ export default function Hero() {
             </motion.p>
 
             {/* Stats */}
-            <motion.div variants={prefersReduced ? undefined : fadeUp} className="flex gap-10 mb-10">
+            <motion.div variants={prefersReduced ? undefined : fadeUp} className="flex gap-8 mb-6">
               {stats.map((s) => (
                 <div key={s.label}>
                   <div className="font-serif text-3xl font-bold text-gold-400">{s.value}</div>
                   <div className="text-xs tracking-widest uppercase text-white/50 mt-1 font-sans max-w-[120px] leading-snug">{s.label}</div>
                 </div>
               ))}
+            </motion.div>
+
+            {/* Seeking tag */}
+            <motion.div variants={prefersReduced ? undefined : fadeUp} className="mb-8">
+              <span className="inline-block text-[10px] tracking-[0.25em] uppercase text-gold-400/80 border border-gold-500/30 px-4 py-1.5 font-sans">
+                Seeking Policy &amp; Legal Intern Roles
+              </span>
             </motion.div>
 
             {/* CTAs */}

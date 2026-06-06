@@ -9,14 +9,14 @@ const achievements = [
     year: "2025",
     title: "UWW U20 World Championships",
     result: "10th Place",
-    detail: "Napoles, Italy",
+    detail: "Samokov, Bulgaria",
     badge: "top10" as Badge,
   },
   {
     year: "2025",
     title: "UWW U20 Pan-American Championships",
     result: "Silver Medalist",
-    detail: "2nd Place",
+    detail: "Lima, Peru",
     badge: "silver" as Badge,
   },
   {
@@ -72,7 +72,7 @@ export default function Achievements() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="achievements" className="bg-navy-900 py-24 lg:py-32 relative overflow-hidden">
+    <section id="achievements" className="bg-navy-900 py-16 sm:py-24 lg:py-32 relative overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-[0.04]"
         style={{
@@ -81,7 +81,7 @@ export default function Achievements() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
         {/* Heading */}
         <motion.div
           initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}

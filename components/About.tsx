@@ -18,9 +18,9 @@ export default function About() {
   const prefersReduced = useReducedMotion();
 
   return (
-    <section id="about" className="bg-cream py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+    <section id="about" className="bg-cream py-16 sm:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           {/* Left — heading */}
           <motion.div
             variants={prefersReduced ? undefined : stagger}
