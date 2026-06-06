@@ -61,9 +61,11 @@ const container = {
   show: { transition: { staggerChildren: 0.1 } },
 };
 
+const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
+
 const card = {
   hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
 };
 
 export default function Achievements() {
@@ -85,7 +87,7 @@ export default function Achievements() {
           initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}
           whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="text-center mb-16"
         >
           <p className="text-gold-400 text-xs tracking-[0.35em] uppercase mb-4 font-sans">

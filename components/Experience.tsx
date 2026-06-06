@@ -61,9 +61,11 @@ const experiences = [
   },
 ];
 
+const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
 
 export default function Experience() {
@@ -77,7 +79,7 @@ export default function Experience() {
           initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}
           whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="mb-16"
         >
           <p className="text-gold-600 text-xs tracking-[0.35em] uppercase mb-4 font-sans">

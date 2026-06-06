@@ -13,9 +13,11 @@ const containerVariants = {
   show: { transition: { staggerChildren: 0.12 } },
 };
 
+const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
 export default function Hero() {
@@ -93,7 +95,7 @@ export default function Hero() {
           <motion.div
             initial={prefersReduced ? undefined : { opacity: 0, x: 40 }}
             animate={prefersReduced ? undefined : { opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay: 0.3 }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative">

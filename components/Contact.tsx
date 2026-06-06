@@ -15,7 +15,7 @@ export default function Contact() {
           initial={prefersReduced ? undefined : { opacity: 0, y: 30 }}
           whileInView={prefersReduced ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
         >
           <p className="text-gold-400 text-xs tracking-[0.35em] uppercase mb-4 font-sans">
             Let’s Connect
