@@ -117,7 +117,7 @@ export default function Achievements() {
                 className="card-glass p-6 group cursor-default"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <span className="font-serif text-4xl font-bold text-white/10 leading-none select-none">
+                  <span className="font-serif text-4xl font-bold text-white/30 leading-none select-none">
                     {a.year}
                   </span>
                   <span className={`text-[10px] font-sans font-semibold tracking-widest uppercase px-2.5 py-1 ${badge.bg} ${badge.text}`}>
