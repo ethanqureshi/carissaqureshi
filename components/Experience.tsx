@@ -119,7 +119,7 @@ export default function Experience() {
                     <h3 className="font-serif text-lg sm:text-xl font-semibold text-navy-900">
                       {exp.role}
                     </h3>
-                    <span className="text-gold-600 font-sans text-sm">, {exp.org}</span>
+                    <span className="text-gold-600 font-sans text-sm"> - {exp.org}</span>
                   </div>
                   <div className="flex flex-wrap gap-x-4 gap-y-0.5 mt-0.5">
                     <span className="text-xs tracking-widest uppercase text-navy-600/60 font-sans">{exp.dates}</span>

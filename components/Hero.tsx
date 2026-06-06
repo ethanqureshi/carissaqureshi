@@ -61,7 +61,7 @@ export default function Hero() {
             <div className="gold-rule w-24 mb-6" />
 
             <motion.p variants={prefersReduced ? undefined : fadeUp} className="text-white/70 text-base sm:text-lg leading-relaxed max-w-lg font-sans mb-8">
-              World Team wrestler, 3.9 student, and driven leader seeking to bring elite-level discipline to public service.
+              World Team wrestler, 3.9 GPA student, and driven leader seeking to bring elite-level discipline to public service.
             </motion.p>
 
             {/* Stats */}
