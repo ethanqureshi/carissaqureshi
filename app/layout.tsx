@@ -15,12 +15,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.carissaqureshi.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Carissa Qureshi",
   description: "World Team wrestler, 3.9 GPA student, and driven leader seeking to bring elite-level discipline to public service.",
   openGraph: {
     title: "Carissa Qureshi",
     description: "World Team wrestler, 4.0 student, and driven leader.",
-    url: "https://carissaqureshi.com",
+    url: "https://www.carissaqureshi.com",
   },
 };
 
