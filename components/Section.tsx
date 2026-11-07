@@ -1,4 +1,7 @@
+import Logo, { hasLogo } from "@/components/Logo";
 import Reveal from "@/components/Reveal";
+
+export type LogoRef = { file: string; name: string };
 
 export function Container({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-[1040px] px-4 sm:px-8 ${className}`}>{children}</div>;
@@ -34,13 +37,24 @@ export type EntryData = {
   dates: string;
   details?: string[];
   bullets?: string[];
+  /** Affiliation logos shown above the entry; only files present in /public/logos render here. */
+  logos?: LogoRef[];
 };
 
 export function EntryList({ entries }: { entries: EntryData[] }) {
   return (
     <ul className="divide-y divide-navy/10 border-t border-navy/10">
-      {entries.map((e) => (
+      {entries.map((e) => {
+        const logos = (e.logos ?? []).filter((l) => hasLogo(l.file));
+        return (
         <Reveal as="li" key={`${e.title}-${e.org}`} className="py-7">
+          {logos.length > 0 && (
+            <div className="mb-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+              {logos.map((l) => (
+                <Logo key={l.file} file={l.file} name={l.name} />
+              ))}
+            </div>
+          )}
           <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
             <h3 className="font-serif text-xl font-semibold leading-snug sm:text-2xl">{e.title}</h3>
             <p className="shrink-0 text-sm text-navy/60 sm:text-right">{e.dates}</p>
@@ -63,7 +77,8 @@ export function EntryList({ entries }: { entries: EntryData[] }) {
             </ul>
           )}
         </Reveal>
-      ))}
+        );
+      })}
     </ul>
   );
 }

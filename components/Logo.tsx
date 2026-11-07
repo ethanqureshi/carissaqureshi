@@ -23,6 +23,10 @@ function resolveLogo(file: string): string | null {
   return null;
 }
 
+export function hasLogo(file: string): boolean {
+  return resolveLogo(file) !== null;
+}
+
 type LogoProps = {
   file: string;
   name: string;

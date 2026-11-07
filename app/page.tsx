@@ -1,7 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import {
-  Affiliations,
   Education,
   Athletics,
   Record,
@@ -19,7 +18,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Affiliations />
         <Education />
         <Athletics />
         <Record />

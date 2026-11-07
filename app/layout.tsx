@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+// Self-hosted font files (SIL OFL, see app/fonts/*-OFL.txt) so builds never fetch from Google.
+const cormorant = localFont({
+  src: [
+    { path: "./fonts/CormorantGaramond-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/CormorantGaramond-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/CormorantGaramond-SemiBold.woff2", weight: "600", style: "normal" },
+  ],
   variable: "--font-cormorant",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: [{ path: "./fonts/Inter-Regular.woff2", weight: "400", style: "normal" }],
   variable: "--font-inter",
   display: "swap",
 });

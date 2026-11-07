@@ -1,40 +1,20 @@
-import Logo from "@/components/Logo";
 import Reveal from "@/components/Reveal";
-import Section, { Container, EntryList, type EntryData } from "@/components/Section";
+import Logo, { hasLogo } from "@/components/Logo";
+import Section, { EntryList, type EntryData, type LogoRef } from "@/components/Section";
 
-/* ---------- Affiliations ---------- */
+/* ---------- Logos (shown beside the entry where each organization is mentioned) ---------- */
 
-const affiliations = [
-  { file: "usa-wrestling", name: "USA Wrestling" },
-  { file: "uww", name: "United World Wrestling" },
-  { file: "cif", name: "CIF" },
-  { file: "north-central-college", name: "North Central College" },
-  { file: "uccs", name: "UCCS" },
-  { file: "golden-west-college", name: "Golden West College" },
-  { file: "marina-high-school", name: "Marina High School" },
-  { file: "gracie-barra", name: "Gracie Barra" },
-  { file: "stateville-speaks", name: "Stateville Speaks" },
-  { file: "partners-for-success", name: "Partners for Success" },
-];
-
-export function Affiliations() {
-  return (
-    <section aria-label="Affiliations">
-      <Container>
-        <Reveal className="border-t border-navy/10 pb-14 pt-8">
-          <p className="mb-5 text-xs uppercase tracking-[0.2em] text-navy/55">Affiliations</p>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            {affiliations.map((a) => (
-              <li key={a.file}>
-                <Logo file={a.file} name={a.name} />
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </Container>
-    </section>
-  );
-}
+const L = {
+  usaw: { file: "usa-wrestling", name: "USA Wrestling" },
+  uww: { file: "uww", name: "United World Wrestling" },
+  cif: { file: "cif", name: "CIF" },
+  ncc: { file: "north-central-college", name: "North Central College" },
+  uccs: { file: "uccs", name: "UCCS" },
+  gwc: { file: "golden-west-college", name: "Golden West College" },
+  marina: { file: "marina-high-school", name: "Marina High School" },
+  gracie: { file: "gracie-barra", name: "Gracie Barra" },
+  stateville: { file: "stateville-speaks", name: "Stateville Speaks" },
+} satisfies Record<string, LogoRef>;
 
 /* ---------- 1. Education ---------- */
 
@@ -44,18 +24,21 @@ const education: EntryData[] = [
     org: "North Central College",
     location: "Naperville, IL",
     dates: "Aug 2025 to May 2027 (expected)",
+    logos: [L.ncc],
     details: ["GPA 4.0"],
     bullets: ['Major research: "Effect of Red-Pill Content on Young Men and Their Gendered Worldview"'],
   },
   {
     title: "Political Science coursework",
     org: "University of Colorado Colorado Springs",
+    logos: [L.uccs],
     dates: "Jan 2025 to Aug 2025",
     details: ["GPA 4.0"],
   },
   {
     title: "Psychology coursework",
     org: "Golden West College",
+    logos: [L.gwc],
     location: "Huntington Beach, CA",
     dates: "Aug 2023 to Dec 2024",
     details: ["GPA 3.80"],
@@ -63,6 +46,7 @@ const education: EntryData[] = [
   {
     title: "High school diploma",
     org: "Marina High School",
+    logos: [L.marina],
     location: "Huntington Beach, CA",
     dates: "Class of 2023",
   },
@@ -82,6 +66,7 @@ const athletics: EntryData[] = [
   {
     title: "U.S. National Team Athlete, Women's Freestyle Wrestling",
     org: "USA Wrestling and United World Wrestling (UWW)",
+    logos: [L.usaw, L.uww],
     dates: "2023 to 2025",
     bullets: [
       "Represented the United States at the 2024 (Spain) and 2025 (Bulgaria) U20 World Championships, in fields of 650 wrestlers from 50+ nations; placed 10th in 2025.",
@@ -91,6 +76,7 @@ const athletics: EntryData[] = [
   {
     title: "Invited Athlete, USA Wrestling Elite Accelerator Program",
     org: "U.S. Olympic & Paralympic Training Center",
+    logos: [L.usaw],
     location: "Colorado Springs, CO",
     dates: "2025",
     bullets: [
@@ -104,6 +90,7 @@ const athletics: EntryData[] = [
     org: "North Central College",
     location: "Naperville, IL",
     dates: "Aug 2025 to Present",
+    logos: [L.ncc],
     bullets: ["Balances a full competition and travel schedule with a double major and a 4.0 GPA."],
   },
 ];
@@ -118,11 +105,11 @@ export function Athletics() {
 
 /* ---------- 3. Competition Record ---------- */
 
-const record = [
-  { year: "2025", event: "UWW U20 World Championships", result: "10th" },
-  { year: "2025", event: "UWW U20 Pan-American Championships", result: "2nd" },
-  { year: "2024", event: "UWW U20 World Team Trials", result: "Champion" },
-  { year: "2023", event: "California State Championships (CIF)", result: "Champion" },
+const record: { year: string; event: string; result: string; logo?: LogoRef }[] = [
+  { year: "2025", event: "UWW U20 World Championships", result: "10th", logo: L.uww },
+  { year: "2025", event: "UWW U20 Pan-American Championships", result: "2nd", logo: L.uww },
+  { year: "2024", event: "U.S. U20 World Team Trials", result: "Champion", logo: L.usaw },
+  { year: "2023", event: "California State Championships (CIF)", result: "Champion", logo: L.cif },
   { year: "2023", event: "Orange County Female Wrestler of the Year", result: "Honoree" },
   { year: "2023", event: "Triple Crown", result: "Winner" },
 ];
@@ -143,7 +130,14 @@ export function Record() {
             {record.map((r) => (
               <tr key={r.event} className="border-b border-navy/10 align-baseline">
                 <td className="py-4 pr-4 tabular-nums text-navy/60">{r.year}</td>
-                <td className="py-4 pr-4">{r.event}</td>
+                <td className="py-4 pr-4">
+                  {r.logo && hasLogo(r.logo.file) && (
+                    <span className="mb-2 block">
+                      <Logo file={r.logo.file} name={r.logo.name} />
+                    </span>
+                  )}
+                  {r.event}
+                </td>
                 <td className="py-4 text-right font-serif text-lg font-semibold">{r.result}</td>
               </tr>
             ))}
@@ -160,6 +154,7 @@ const research: EntryData[] = [
   {
     title: "Intern",
     org: "Stateville Speaks",
+    logos: [L.stateville],
     location: "Illinois",
     dates: "Sep 2026 to Present",
     bullets: [
@@ -200,6 +195,7 @@ const leadership: EntryData[] = [
   {
     title: "Youth Instructor",
     org: "Gracie Barra HQ",
+    logos: [L.gracie],
     location: "Irvine, CA",
     dates: "2015 to 2018",
     bullets: [
@@ -210,6 +206,7 @@ const leadership: EntryData[] = [
   {
     title: "Varsity Girls Wrestling Captain",
     org: "Marina High School",
+    logos: [L.marina],
     location: "Huntington Beach, CA",
     dates: "Three seasons",
     bullets: [
