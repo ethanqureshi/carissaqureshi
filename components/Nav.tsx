@@ -1,89 +1,76 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#achievements", label: "Achievements" },
-  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#athletics", label: "Athletics" },
+  { href: "#record", label: "Record" },
+  { href: "#research", label: "Research" },
   { href: "#contact", label: "Contact" },
 ];
+
+const RESUME = "/Carissa-Qureshi-Resume.pdf";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const prefersReduced = useReducedMotion();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: prefersReduced ? 0 : -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "nav-scrolled" : "bg-transparent"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b bg-cream transition-colors duration-300 ${
+        scrolled || open ? "border-navy/10" : "border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
-        <a href="#" className="font-serif text-xl font-bold tracking-widest text-cream">
-          C<span className="text-gradient-gold">Q</span>
+      <nav aria-label="Primary" className="mx-auto flex h-16 w-full max-w-[1040px] items-center justify-between px-4 sm:px-8">
+        <a href="#top" className="font-serif text-xl font-semibold tracking-tight">
+          Carissa Qureshi
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-sm tracking-widest uppercase text-white/70 hover:text-gold-400 transition-colors duration-300"
-              >
+              <a href={l.href} className="text-sm text-navy/70 transition-colors hover:text-navy">
                 {l.label}
               </a>
             </li>
           ))}
           <li>
-            <a
-              href="#contact"
-              className="text-sm tracking-widest uppercase px-5 py-2 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-navy-950 transition-all duration-300"
-            >
-              Get in Touch
+            <a href={RESUME} className="border-b border-gold pb-0.5 text-sm text-navy">
+              Resume
             </a>
           </li>
         </ul>
 
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
+          type="button"
+          className="-mr-2 p-2 text-sm text-navy lg:hidden"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
-          <span className={`block w-6 h-px bg-gold-400 transition-transform duration-300 ${open ? "rotate-45 translate-y-2.5" : ""}`} />
-          <span className={`block w-6 h-px bg-gold-400 transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-px bg-gold-400 transition-transform duration-300 ${open ? "-rotate-45 -translate-y-2.5" : ""}`} />
+          {open ? "Close" : "Menu"}
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-navy-950/95 backdrop-blur-xl border-t border-gold-500/10 px-6 py-6 flex flex-col gap-5">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-sm tracking-widest uppercase text-white/80 hover:text-gold-400 transition-colors"
-            >
-              {l.label}
-            </a>
+        <ul id="mobile-menu" className="mx-auto w-full max-w-[1040px] border-t border-navy/10 px-4 py-2 sm:px-8 lg:hidden">
+          {[...links, { href: RESUME, label: "Resume" }].map((l) => (
+            <li key={l.href} className="border-b border-navy/10 last:border-b-0">
+              <a href={l.href} onClick={() => setOpen(false)} className="block py-3 text-[15px] text-navy">
+                {l.label}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
-    </motion.nav>
+    </header>
   );
 }

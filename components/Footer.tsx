@@ -1,30 +1,31 @@
+import { Container } from "@/components/Section";
+import Year from "@/components/Year";
+
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 border-t border-gold-500/10 py-8">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="font-serif text-base text-white/50">
-          Carissa <span className="text-gold-500/70">Qureshi</span>
-        </p>
-        <p className="font-sans text-xs text-white/30 tracking-wide">
-          &copy; {new Date().getFullYear()} &middot; carissaqureshi.com
-        </p>
-        <div className="flex gap-6">
-          <a
-            href="mailto:carissadaniellequreshi@gmail.com"
-            className="text-xs font-sans tracking-widest uppercase text-white/30 hover:text-gold-400 transition-colors duration-300"
-          >
-            Email
-          </a>
-          <a
-            href="https://www.linkedin.com/in/carissa-qureshi-a34914208/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-sans tracking-widest uppercase text-white/30 hover:text-gold-400 transition-colors duration-300"
-          >
-            LinkedIn
-          </a>
+    <footer>
+      <Container>
+        <div className="flex flex-col gap-3 border-t border-gold/70 py-10 text-sm text-navy/60 sm:flex-row sm:items-baseline sm:justify-between">
+          <p className="font-serif text-lg text-navy">Carissa Qureshi</p>
+          <p>
+            &copy; <Year fallback={new Date().getFullYear()} /> · carissaqureshi.com
+          </p>
+          <div className="flex gap-6">
+            <a href="mailto:carissadaniellequreshi@gmail.com" className="hover:text-navy">
+              Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/carissa-qureshi-a34914208/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-navy"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
-      </div>
+        <p className="pb-10 text-xs text-navy/50">Logos are trademarks of their respective owners.</p>
+      </Container>
     </footer>
   );
 }
